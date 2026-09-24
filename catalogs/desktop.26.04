@@ -1,0 +1,5 @@
+# desktop.26.04 - version-specific additions for the desktop profile on 26.04.
+# New GNOME-core apps shipped as defaults from 24.04/26.04 onward.
+
+showtime
+snapshot

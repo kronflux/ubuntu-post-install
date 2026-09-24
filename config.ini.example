@@ -1,0 +1,37 @@
+# config.ini.example - copy to config.ini and pass --config config.ini.
+# Keys are the same as profiles/*.conf. This file overrides the profile;
+# CLI flags override this file. Booleans must be true or false.
+# Every boolean is also toggleable in the interactive menu.
+
+# auto=true      answer yes to every confirmation (unattended)
+# dry_run=true   print actions without executing
+auto=false
+dry_run=false
+
+# profile=server | desktop | minimal   (usually given via --profile instead)
+#profile=server
+
+# --- debloat options ---
+# remove_snapd=true        remove every snap, then purge and pin snapd
+# remove_lxd=true          remove the lxd snap and lxd group membership
+# disable_telemetry=true   disable apport, whoopsie, popularity-contest, ubuntu-report
+# clean_motd=true          disable motd-news and de-execute help-text banners
+# remove_cloudinit=true    remove cloud-init. NEVER on cloud/VPS images
+# remove_avahi=true        remove avahi/mDNS (.local names, printer discovery)
+# remove_pro_client=false  remove the Ubuntu Pro client (ESM/USG/FIPS need it)
+# pin_removed=false        hold + pin every removed package against reinstall
+
+# --- hardening options ---
+# harden_firewall=true         ufw: deny incoming, allow outgoing, allow SSH port
+# harden_ssh=true              sshd_config.d drop-in (never disables password
+#                              auth when no SSH key exists)
+# harden_kernel=true           sysctl drop-in (anti-spoofing, no redirects)
+# encrypt_dns=false            DNS-over-TLS via systemd-resolved
+#                              (Cloudflare+Quad9; changes name resolution)
+# enable_unattended_upgrades=true  automatic security updates
+# install_fail2ban=false       install and enable fail2ban (ssh jail)
+
+# --- system options ---
+# tune_performance=true   swappiness=10, BBR, nofile 65535
+# cap_journald=true       cap persistent journal at 500M
+# extra_packages=htop,jq  extra packages to install (comma-separated)

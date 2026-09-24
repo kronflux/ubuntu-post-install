@@ -1,0 +1,6 @@
+# server.26.04 - version-specific additions for the server profile on 26.04.
+# 26.04.1 base is compiled from reference lists; verify against a live
+# `dpkg -l` before adding entries (see plan, Uncertainty section).
+
+# No confirmed 26.04-only server additions yet; 26.04 server bloat is
+# snap-based (lxd, snapd) and handled by the snap/cloud step.

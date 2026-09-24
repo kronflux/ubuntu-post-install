@@ -1,0 +1,45 @@
+# desktop.common - packages commonly unwanted on Ubuntu Desktop.
+# Compiled from matissd_ubuntu-26-debloat-script and itsnin_ubuntu-debloat
+# reference lists. Exact dpkg names only; the debloat step intersects this
+# list with what is actually installed before proposing any removal.
+# Line forms: <pkg> = remove when installed; opt:<pkg> = only when
+# remove_optional=true.
+
+# Mail and office suite
+thunderbird
+libreoffice-calc
+libreoffice-impress
+libreoffice-writer
+libreoffice-base
+libreoffice-draw
+libreoffice-math
+
+# Media players
+totem
+rhythmbox
+
+# Games
+aisleriot
+gnome-mahjongg
+gnome-mines
+gnome-sudoku
+
+# GNOME apps rarely used on servers or minimal desktops
+gnome-contacts
+gnome-weather
+gnome-maps
+simple-scan
+cheese
+yelp
+deja-dup
+shotwell
+usb-creator-gtk
+
+# P2P and remote-desktop clients
+transmission-gtk
+remmina
+
+# Printing (cups) and avahi removal live in server.common; global catalog
+# uniqueness forbids repeating them here. Desktop users who want them gone
+# should enable remove_avahi / use the minimal profile, which loads both
+# catalogs.

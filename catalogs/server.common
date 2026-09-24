@@ -1,0 +1,37 @@
+# server.common - packages commonly unwanted on a production Ubuntu Server.
+# Exact dpkg names only. The debloat step intersects this list with what is
+# actually installed before proposing any removal.
+# Line forms:
+#   <pkg>      remove when installed (profile default)
+#   opt:<pkg>  gated by its own remove_* option (see lib/common.sh
+#              catalog_entries for the mapping)
+
+# Telemetry and crash reporting
+apport
+apport-symptoms
+whoopsie
+popularity-contest
+ubuntu-report
+
+# Landscape management agent
+landscape-common
+
+# Modem / mobile broadband support (unwanted on VMs and rack servers)
+modemmanager
+mobile-broadband-provider-info
+
+# Printing stack (unwanted on headless servers; autoremove pulls the rest)
+cups
+cups-browsed
+
+# Avahi/mDNS discovery (remove_avahi)
+opt:avahi-daemon
+opt:avahi-utils
+
+# Cloud provisioning (remove_cloudinit; never remove on cloud/VPS images)
+opt:cloud-init
+opt:cloud-guest-utils
+
+# Ubuntu Pro client (remove_pro_client; needed for ESM/USG/FIPS)
+opt:ubuntu-pro-client
+opt:ubuntu-advantage-tools
